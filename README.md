@@ -33,9 +33,7 @@ Add it to the `AppKernel.php` class:
 
 Add it to your `app/config/config.yml`
 
-#Configuración del almacenamiento de sesión en Memcache
-
-#Configuración del puente
+`#Configuración del puente`
 
 ministerio_user_auth_bridge:
     roles: %roles%
@@ -44,12 +42,12 @@ ministerio_user_auth_bridge:
 
 Add to your `app/config/parameters.yml`
 
-#Configuración de los parámetros del puente
+`#Configuración de los parámetros del puente`
     roles: USER_ROLES,SEPARADOS_POR,COMA #Vienen de la aplicación Symfony 1
     logout_url: http://url_de_logout_de_la_app_sf1.com
     login_url: http://url_de_login_de_la_app_sf1.com
 
-#Configuración de los parámetros para almacenar la sesión en memcache
+`#Configuración de los parámetros para almacenar la sesión en memcache`
     memcache_host: localhost
     memcache_port: 11211
     memcache_expire: 86400
@@ -63,17 +61,6 @@ Add to your `app/config/parameters.yml`
 
 This bundle extends [TheodoEvolutionSessionBundle](https://github.com/theodo/TheodoEvolutionSessionBundle).
 
-## Usage
-
-Use following command from console:
-
-    app/console jordillonch:generate:crud
-
-As you will see there is no config file. You will generate a CRUD code with all fields from your entity. But after code generation you
-are free to modify the code because there is no magic just a simple code that is very easy to understand.
-
-You have to know that if you reuse the command to recreate same entity, first you must delete controller and form files
-from previous generation.
 
 ## Author
 
