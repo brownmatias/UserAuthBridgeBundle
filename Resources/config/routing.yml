@@ -5,3 +5,7 @@ ministerio_user_auth_bridge_logout:
 ministerio_user_auth_bridge_login:
     path:     /login
     defaults: { _controller: MinisterioUserAuthBridgeBundle:Default:login }
+
+ministerio_user_auth_bridge_return:
+    path:     /return
+    defaults: { _controller: MinisterioUserAuthBridgeBundle:Default:return }

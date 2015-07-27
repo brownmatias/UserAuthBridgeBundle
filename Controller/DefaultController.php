@@ -7,9 +7,14 @@ use Symfony\Component\HttpFoundation\Response;
 
 class DefaultController extends Controller
 {
+    public function returnAction()
+    {
+        return $this->redirect($this->container->getParameter('login_url'));
+    }
+
     public function loginAction()
     {
-        return $this->redirect($this->container->getParameter('logoin_url'));
+        return $this->redirect($this->container->getParameter('login_url'));
     }
 
     public function logoutAction()
