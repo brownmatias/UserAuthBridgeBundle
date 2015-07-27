@@ -33,6 +33,11 @@ Add it to the `AppKernel.php` class:
 
 Add it to your `app/config/config.yml`
 
+Agregado de archivos externos:
+
+    - { resource: '@MinisterioUserAuthBridgeBundle/Resources/config/config.yml' }
+    - { resource: '@MinisterioUserAuthBridgeBundle/Resources/config/security.yml' }
+
 Configuración del puente:
 
     ministerio_user_auth_bridge:
