@@ -1,0 +1,22 @@
+{
+    "name": "ministerio/user-auth-bridge-bundle",
+    "description": "A bridge between Symfony 1.x and Symfony 2.x apps using Memcache",
+    "type": "symfony-bundle",
+    "homepage": "https://github.com/brownmatias/UserAuthBridgeBundle",
+    "require": {
+        "php": ">=5.5.4",
+        "theodo-evolution/session-bundle": "^1.1@dev"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Matías Brown",
+            "email": "matibrown@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-0": { "Ministerio\\Bundle\\UserAuthBridgeBundle": "" }
+    },
+    "target-dir": "Ministerio/Bundle/UserAuthBridgeBundle"
+}

@@ -1,0 +1,11 @@
+theodo_evolution_session:
+    bag_manager:
+        class:                    Theodo\Evolution\Bundle\SessionBundle\Manager\Symfony1\BagManager
+        configuration_class:      Theodo\Evolution\Bundle\SessionBundle\Manager\Symfony1\BagConfiguration
+
+framework:
+    session:
+        name: %session_name%
+        save_path: %session_save_path%
+        #cookie_domain: %session_cookie_domain%
+        handler_id: session.handler.memcache

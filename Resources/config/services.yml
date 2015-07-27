@@ -1,0 +1,24 @@
+services:
+    memcache:
+        class: Memcache
+        calls:
+            - [ addServer, [ %memcache_host%, %memcache_port% ]]
+
+    ministerio_user_bridge.user_provider:
+        class: Ministerio\Bundle\UserAuthBridgeBundle\Security\User\MinisterioUserBridgeUserProvider
+        arguments: [ @session, @service_container ]
+
+    session.handler.memcache:
+        class: Ministerio\Bundle\UserAuthBridgeBundle\Session\Storage\Handler\MinisterioMemcacheSessionHandler
+        arguments: [ @memcache, { expiretime: %memcache_expire%, prefix: %session_prefix%, serialize_handler: php_serialize } ]
+
+    ministerio_user_bridge.security.authentication.provider:
+        class: Ministerio\Bundle\UserAuthBridgeBundle\Security\Authentication\Provider\MinisterioUserBridgeProvider
+        arguments:
+            - @ministerio_user_bridge.user_provider # User Provider
+        public: false
+
+    ministerio_user_bridge.security.authentication.listener:
+        class: Ministerio\Bundle\UserAuthBridgeBundle\Security\Firewall\MinisterioUserBridgeListener
+        arguments: ["@security.token_storage", "@security.authentication.manager", "@service_container"]
+        public: false

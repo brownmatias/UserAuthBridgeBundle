@@ -1,0 +1,7 @@
+ministerio_user_auth_bridge_logout:
+    path:     /logout
+    defaults: { _controller: MinisterioUserAuthBridgeBundle:Default:logout }
+
+ministerio_user_auth_bridge_login:
+    path:     /login
+    defaults: { _controller: MinisterioUserAuthBridgeBundle:Default:login }
