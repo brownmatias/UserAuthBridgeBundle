@@ -35,10 +35,10 @@ Add it to your `app/config/config.yml`
 
 Configuración del puente:
 
-ministerio_user_auth_bridge:
-    roles: %roles%
-    logout_url: %logout_url%
-    login_url: %login_url%
+    ministerio_user_auth_bridge:
+        roles: %roles%
+        logout_url: %logout_url%
+        login_url: %login_url%
 
 Add to your `app/config/parameters.yml`
 
