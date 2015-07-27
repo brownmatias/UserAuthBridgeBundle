@@ -33,7 +33,7 @@ Add it to the `AppKernel.php` class:
 
 Add it to your `app/config/config.yml`
 
-Configuración del puente
+Configuración del puente:
 
 ministerio_user_auth_bridge:
     roles: %roles%
@@ -42,12 +42,14 @@ ministerio_user_auth_bridge:
 
 Add to your `app/config/parameters.yml`
 
-Configuración de los parámetros del puente
+Configuración de los parámetros del puente:
+
     roles: USER_ROLES,SEPARADOS_POR,COMA #Vienen de la aplicación Symfony 1
     logout_url: http://url_de_logout_de_la_app_sf1.com
     login_url: http://url_de_login_de_la_app_sf1.com
 
-Configuración de los parámetros para almacenar la sesión en memcache
+Configuración de los parámetros para almacenar la sesión en memcache:
+
     memcache_host: localhost
     memcache_port: 11211
     memcache_expire: 86400
