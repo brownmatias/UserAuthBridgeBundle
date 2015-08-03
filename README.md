@@ -61,6 +61,16 @@ Configuración de los parámetros para almacenar la sesión en memcache:
     session_prefix: 'nombre_aplicacion:'
     session_name: nombre_aplicacion
 
+Add to your `app/config/security.yml`
+
+    access_control:
+        - { path: ^/, roles: ROLE_ACCESS }
+
+or
+
+    access_control:
+        - { path: ^/, roles: ROLE_YOUR_APP_ROLE }
+
 **This bundle works on Symfony >= 2.7 version.**
 
 
