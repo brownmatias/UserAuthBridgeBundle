@@ -5,7 +5,7 @@ namespace Ministerio\Bundle\UserAuthBridgeBundle\Event;
 use Symfony\Component\EventDispatcher\Event;
 use Ministerio\Bundle\UserAuthBridgeBundle\Security\Authentication\Token\MinisterioUserBridgeToken;
 
-class MinisterioUserBridgeAuthenticatedEvent implements Event 
+class MinisterioUserBridgeAuthenticatedEvent extends Event 
 {
     protected $userToken;
 
