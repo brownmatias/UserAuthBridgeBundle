@@ -73,6 +73,10 @@ or
 
 **This bundle works on Symfony >= 2.7 version.**
 
+## Authenticated user event
+
+After the user was authenticated, the `miniterio.user.bridge.authenticated` event is triggered.
+
 
 ## Dependencies
 

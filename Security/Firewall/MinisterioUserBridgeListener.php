@@ -11,9 +11,12 @@ use Symfony\Component\Security\Http\Firewall\ListenerInterface;
 use Ministerio\Bundle\UserAuthBridgeBundle\Security\Authentication\Token\MinisterioUserBridgeToken;
 use Theodo\Evolution\Bundle\SessionBundle\Manager\BagManagerConfigurationInterface;
 use Theodo\Evolution\Bundle\SessionBundle\Manager\Symfony1\BagConfiguration;
+use Ministerio\Bundle\UserAuthBridgeBundle\Event\MinisterioUserBridgeAuthenticatedEvent;
 
 class MinisterioUserBridgeListener implements ListenerInterface
 {
+    const AUTHENTICATED_EVENT = "miniterio.user.bridge.authenticated";
+
     protected $tokenStorage;
     protected $authenticationManager;
     protected $container;
@@ -41,7 +44,7 @@ class MinisterioUserBridgeListener implements ListenerInterface
             try {
                 $authToken = $this->authenticationManager->authenticate($token);
                 $this->tokenStorage->setToken($authToken);
-
+                $this->getDispatcher()->dispatch(self::AUTHENTICATED_EVENT, new MinisterioUserBridgeAuthenticatedEvent(authToken));
                 return;
             } catch (AuthenticationException $failed) {
                 // ... you might log something here
