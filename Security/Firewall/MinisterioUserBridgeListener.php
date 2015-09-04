@@ -44,7 +44,7 @@ class MinisterioUserBridgeListener implements ListenerInterface
             try {
                 $authToken = $this->authenticationManager->authenticate($token);
                 $this->tokenStorage->setToken($authToken);
-                $this->getDispatcher()->dispatch(self::AUTHENTICATED_EVENT, new MinisterioUserBridgeAuthenticatedEvent(authToken));
+                $event->getDispatcher()->dispatch(self::AUTHENTICATED_EVENT, new MinisterioUserBridgeAuthenticatedEvent(authToken));
                 return;
             } catch (AuthenticationException $failed) {
                 // ... you might log something here
